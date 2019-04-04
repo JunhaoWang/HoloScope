@@ -5,6 +5,8 @@ import io as basicio
 from holoscopeFraudDect import *
 from mytools.ioutil import loadSimpleList
 from sklearn.metrics import roc_auc_score
+import matplotlib
+matplotlib.use('agg')
 
 def precision_recall_sets(trueset, predset):
     correct = 0
@@ -172,7 +174,7 @@ if __name__=="__main__":
             ratefile = checkfilegz(path+rootnm+'rate.dict')
         M = loadedge2sm(freqfile, coo_matrix, weighted=True)
         alg = 'fastgreedy'
-        qfun, b = 'exp', 8 #10 #4 #8 # 32 
+        qfun, b = 'exp', 8 #10 #4 #8 # 32
         tunit = 'd'
     else:
         #print 'no demo {}'.format(demoid)
